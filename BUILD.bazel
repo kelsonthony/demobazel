@@ -10,17 +10,17 @@ java_library(
          "@maven//:org_springframework_spring_context",
          "@maven//:org_springframework_spring_web",
          # new deps
-         #"@maven//:org_springframework_boot_spring_boot_starter_data_jpa",
-#        "@maven//:org_springframework_boot_spring_boot_starter_parent",
-#        "@maven//:org_springframework_boot_spring_boot_starter_web",
-#        "@maven//:org_springframework_boot_spring_boot_starter_test",
-#        "@maven//:org_springframework_boot_spring_boot_starter_data_jpa",
-#        "@maven//:org_springframework_boot_spring_boot",
-#        "@maven//:org_springframework_boot_spring_boot_autoconfigure",
-#        "@maven//:org_springframework_spring_web",
-        #"@maven//:org_springframework_boot_spring_boot_starter_web",
-        #"@maven//:org_springframework_spring_context",
-        #"@maven//:org_springframework_spring_web",
+         "@maven//:org_springframework_data_spring_data_commons",
+         "@maven//:org_springframework_data_spring_data_jpa",
+         "@maven//:jakarta_annotation_jakarta_annotation_api",
+         "@maven//:com_h2database_h2",
+         #"@maven//:net_devh_grpc_server_spring_boot_starter",
+#         "@maven//:io_grpc_grpc_core",
+#         "@maven//:net_devh_grpc_server_spring_boot_autoconfigure",
+#         "@maven//:net_devh_grpc_common_spring_boot",
+#         "@maven//:io_grpc_grpc_util",
+         #"@maven//:io_grpc_grpc_stub",
+         #"@maven//:io_grpc_grpc_protobuf",
 
         #"//src/main/java/com/kelsonthony/demobazel/domain/repository:repository",
 
@@ -31,13 +31,19 @@ java_library(
         #"@maven//:org_springframework_boot_spring_boot_autoconfigure",
         #"@maven//:org_springframework_boot_spring_boot ",
         #"@maven//:org_springframework_spring_web",
-        #"@maven//:com_h2database_h2",
-        #"@maven//:net_devh_grpc_server_spring_boot_starter",
-        #"@maven//:io_grpc_grpc_stub",
-        #"@maven//:io_grpc_grpc_protobuf",
-        #"@maven//:jakarta_annotation_jakarta_annotation_api",
+
+
+
     ],
 )
+
+#java_toolchain(
+#    name = "my_java_toolchain",
+#    toolchain = {
+#        "target_compatible_with": ["@bazel_tools//tools/jdk:current_java_runtime"],
+#        "java_version": "21",
+#    },
+#)
 
 java_binary(
     name = "app",
@@ -45,4 +51,6 @@ java_binary(
     runtime_deps = [
         ":lib",
     ],
+    #javacopts = ["--release", "21"],
 )
+

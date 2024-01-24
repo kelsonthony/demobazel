@@ -13,3 +13,6 @@ bazel run @maven//:pin
 bazel run @unpinned_maven//:pin
 
 bazel run //demobazel/src/main/java/com/kelsonthony/demobazel/demobazel:app
+
+
+--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED

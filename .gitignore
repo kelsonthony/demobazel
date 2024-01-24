@@ -37,6 +37,7 @@ build/
 bazel-bin
 bazel-out
 bazel-spring-demo-bazel-test
+bazel-demobazel
 bazel-testings
 bazel-testlogs
 MODULE.bazel

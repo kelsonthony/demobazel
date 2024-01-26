@@ -1,6 +1,5 @@
 java_library(
     name = "lib",
-    #srcs = glob(["*.java"]),
     srcs = glob(["src/main/java/com/kelsonthony/**/*.java", "src/main/java/com/kelsonthony/demobazel/**/**/*.java"]),
     resources = glob(["src/main/resources/application.properties"]),
     visibility = ["//src/test:__subpackages__"],
@@ -10,48 +9,13 @@ java_library(
          "@maven//:org_springframework_boot_spring_boot_starter_web",
          "@maven//:org_springframework_spring_context",
          "@maven//:org_springframework_spring_web",
-         # new deps
-         #"@maven//:org_springframework_data_spring_data_commons",
          "@maven//:org_springframework_data_spring_data_jpa",
          "@maven//:jakarta_persistence_jakarta_persistence_api",
          "@maven//:org_springframework_boot_spring_boot_starter_data_jpa",
-         "@maven//:jakarta_annotation_jakarta_annotation_api",
-         "@maven//:jakarta_xml_bind_jakarta_xml_bind_api",
          "@maven//:org_slf4j_slf4j_nop",
-         #"@maven//:org_apache_logging_log4j_log4j_api",
-         #"@maven//:org_apache_logging_log4j_log4j_to_slf4j",
-         #"@maven//:jakarta_persistence_jakarta_persistence_api",
          "@maven//:com_h2database_h2",
-         #"@maven//:net_devh_grpc_server_spring_boot_starter",
-#         "@maven//:io_grpc_grpc_core",
-#         "@maven//:net_devh_grpc_server_spring_boot_autoconfigure",
-#         "@maven//:net_devh_grpc_common_spring_boot",
-#         "@maven//:io_grpc_grpc_util",
-         #"@maven//:io_grpc_grpc_stub",
-         #"@maven//:io_grpc_grpc_protobuf",
-
-        #"//src/main/java/com/kelsonthony/demobazel/domain/repository:repository",
-
-
-        #"@maven//:org_springframework_spring_context",
-
-
-        #"@maven//:org_springframework_boot_spring_boot_autoconfigure",
-        #"@maven//:org_springframework_boot_spring_boot ",
-        #"@maven//:org_springframework_spring_web",
-
-
-
     ],
 )
-
-#java_toolchain(
-#    name = "my_java_toolchain",
-#    toolchain = {
-#        "target_compatible_with": ["@bazel_tools//tools/jdk:current_java_runtime"],
-#        "java_version": "21",
-#    },
-#)
 
 java_binary(
     name = "app",
@@ -59,6 +23,4 @@ java_binary(
     runtime_deps = [
         ":lib",
     ],
-    #javacopts = ["--release", "21"],
 )
-

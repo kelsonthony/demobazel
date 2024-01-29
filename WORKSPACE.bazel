@@ -35,6 +35,7 @@ maven_install(
         "jakarta.persistence:jakarta.persistence-api:3.0.0",
         "org.springframework.data:spring-data-jpa:2.7.17",
         "org.springframework:spring-beans:5.1.5.RELEASE",
+        "com.h2database:h2:1.4.196",
     ],
     repositories = [
         "https://maven.google.com",

@@ -2,6 +2,7 @@ package com.kelsonthony.demobazel.controller;
 
 import com.kelsonthony.demobazel.domain.User;
 import com.kelsonthony.demobazel.repository.UserRepository;
+import com.kelsonthony.demobazel.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,16 +14,11 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
 
-    //private final UserRepository userRepository;
-
-    // UserController(UserRepository userRepository) {
-        //this.userRepository = userRepository;
-    //}
+    UserService service;
 
     @GetMapping
-    public String User() {
-
-        return "Hello!";
+    public List<User> findAll() {
+        return service.findAll();
     }
 
 }
